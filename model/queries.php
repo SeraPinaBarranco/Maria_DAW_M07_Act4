@@ -1,6 +1,6 @@
 <?php
 
-    include_once "./conection.php";
+    require_once "conection.php";
 
     $conexion = conn();
     function comprobar_usuario($user, $pass){
@@ -18,6 +18,15 @@
         }
         
     }
+
+    function insertar_usuario($user, $pass, $tipo){
+        $query= "INSERT INTO usuario(nombre, pass, tipo_usuario) VALUES ('$user', '$pass', $tipo)";
+
+        $res =  guardar($query);
+
+        return $res;
+    }
+
 
 
 ?>

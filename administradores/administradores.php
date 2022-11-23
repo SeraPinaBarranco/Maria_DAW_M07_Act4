@@ -13,7 +13,7 @@
     </header>
     <section>
         <div>
-            <a href="./alta_usuario.php">Alta usuario</a>            
+            <a href="./frm_alta_usuario.php">Alta usuario</a>            
         </div>
         <div>
             <a href="">Alta proyecto</a>            

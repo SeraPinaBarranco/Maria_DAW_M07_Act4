@@ -5,7 +5,7 @@
 function conn (){
     $SERVER= "localhost";
     $USER="root";
-    $PASS="";
+    $PASS="usbw";
     $DB="actividad4";
 
     $mysqli = mysqli_connect($SERVER,$USER,$PASS,$DB)or die("Failed to connect to MySQL: ") ;

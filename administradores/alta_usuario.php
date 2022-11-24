@@ -11,5 +11,4 @@ if (!empty($_POST['nombre']) && !empty($_POST['pass'])) {
 //     echo($_POST['pass']);
 // }
 
-
 ?>

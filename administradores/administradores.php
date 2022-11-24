@@ -16,10 +16,10 @@
             <a href="./frm_alta_usuario.php">Alta usuario</a>            
         </div>
         <div>
-            <a href="">Alta proyecto</a>            
+            <a href="./frm_nuevo_proyecto.php">Alta proyecto</a>            
         </div>
         <div>
-            <a href="">Modificar datos (usuario, proyecto, tarea)</a>            
+            <a href="./frm_modificar_datos.php">Modificar datos (usuario, proyecto, tarea)</a>            
         </div>
         <div>
             <a href="">Eliminar datos(usuario, proyecto, tarea)</a>            

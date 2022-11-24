@@ -27,6 +27,15 @@
         return $res;
     }
 
+    function insertar_proyecto($nombre):int{
+        $query= "INSERT INTO proyecto(nombre) VALUES (?)";
+        $array = $nombre;
+        //array_push($array, $nombre);
+
+        
+
+        return guardar2($query, $array);;
+    }
 
 
 ?>

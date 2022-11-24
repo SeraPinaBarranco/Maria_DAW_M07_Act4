@@ -1,4 +1,17 @@
 
+<?php 
+    //recibir datos del propio formulario
+// if (!empty($_POST['nombre']) && !empty($_POST['pass'])) {
+    
+//     require_once "../model/queries.php";
+
+//     $res = insertar_usuario($_POST['nombre'] ,$_POST['pass'], intval($_POST['tipo']));
+    
+//     if( intval($res)  >= 0 ){
+//         echo "Registro guardado";
+//     }
+//  }
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,14 +25,15 @@
     <header><h1>Alta usuario</h1></header>
 
     <section>
+        <!-- <form action="/*<?php echo $_SERVER['PHP_SELF']; ?>*/" method="post" > -->
         <form action="./alta_usuario.php" method="post" >
             Nombre: <input type="text" name="nombre" id="nombre">
-            <div>
-                Password: <input type="text" name="pass" id="pass">
+            <div style="margin-top: 2vh; margin-bottom: 2vh;">
+                Password: <input type="text" name="pass" id="pass"><br>
                 Re-Password: <input type="text" name="repass" id="repass">
             </div>
             Tipo-usuario: 
-            <select name="tipo" id="tipo">
+            <select name="tipo" id="tipo" style="margin-bottom: 2vh;">
                 <option value="0">Administrador</option>
                 <option value="1">Usuario</option>
             </select>

@@ -5,8 +5,8 @@
 function conn (){
     $SERVER= "localhost";
     $USER="root";
-    $PASS="";
-    //$PASS="usbw";
+    //$PASS="";
+    $PASS="usbw";
     $DB="actividad4";
 
     $mysqli = mysqli_connect($SERVER,$USER,$PASS,$DB)or die("Failed to connect to MySQL: ") ;
@@ -30,6 +30,10 @@ function consulta($query){
     return $filas;
 }
 
+function consulta2($query){  
+    return mysqli_query(conn(), $query);   
+}
+
 //Guardar registros
 function guardar($query):string{
     try{
@@ -42,6 +46,30 @@ function guardar($query):string{
         return $e->getMessage();
     }
     //return -1;
+}
+
+function guardar2($query, $array):int{
+    $msg = "";
+    try {
+        $conn = conn();
+        $stmt = $conn->prepare($query);
+    
+        //Recorre el array pasado por parametro para asignar cada posicion al statement
+        foreach ($array as $value) {
+            $stmt->bind_param("s",$value);
+        }
+        $stmt->execute();
+    
+        $msg = 1;
+        
+    } catch (Exception $th) {
+        $msg = -1;
+    }
+
+
+    $stmt->close();
+    $conn->close();
+    return $msg;
 }
 
 //Cierra la conexion a la BBDD

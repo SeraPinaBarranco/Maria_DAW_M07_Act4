@@ -19,6 +19,9 @@
             <a href="./frm_nuevo_proyecto.php">Alta proyecto</a>            
         </div>
         <div>
+            <a href="./frm_nueva_tarea.php">Alta tarea</a>            
+        </div>
+        <div>
             <a href="./frm_modificar_datos.php">Modificar datos (usuario, proyecto, tarea)</a>            
         </div>
         <div>

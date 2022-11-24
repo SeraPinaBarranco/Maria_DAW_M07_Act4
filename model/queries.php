@@ -31,10 +31,13 @@
         $query= "INSERT INTO proyecto(nombre) VALUES (?)";
         $array = $nombre;
         //array_push($array, $nombre);
-
-        
-
         return guardar2($query, $array);;
+    }
+
+    function get_data($tabla){
+        $query= "SELECT * FROM $tabla";
+        $consulta = consulta2($query);
+        return $consulta;
     }
 
 

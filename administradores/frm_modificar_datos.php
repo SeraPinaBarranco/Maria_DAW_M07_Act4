@@ -35,7 +35,7 @@
                 </thead>
                 <tbody>
                     <?php 
-                        //TODO recorrer array con los resultados de la consulta usuarios
+                        //recorrer array con los resultados de la consulta usuarios
                         while ($fila = mysqli_fetch_array($resultado)) {
                             //extract($fila);
                             echo "<tr>";                          

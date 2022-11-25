@@ -23,7 +23,7 @@
     </header>
     <section>
 
-        <form action="" method="post">
+        <form action="./alta_tarea_pdo.php" method="post">
             
             <label>Usuario</label>
             <select name="usuario" id="usuario">
@@ -46,8 +46,8 @@
             <label for="">Nombre</label>
             <input type="text" name="nombre" id="nombre"><br><br>
     
-            <label for="">Estado</label>
-            <select name="proyecto" id="proyecto">                
+            <label for="estado">Estado</label>
+            <select name="estado" id="estado">                
                 <option value="1">Pendiente</option>
                 <option value="2">En progreso</option>
                 <option value="3">Finalizada</option>

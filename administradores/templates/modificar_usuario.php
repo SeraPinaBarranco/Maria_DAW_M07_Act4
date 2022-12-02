@@ -52,7 +52,8 @@ $resultado = consulta2($query);
             <div>
                 <input type="submit" value="Guardar" name="guardar">                
             </div>
-        <?php } ?>
+            <?php } ?>
+            <input type="hidden" name="tabla" value="usuario">
         </form>
     </section>
     

@@ -42,7 +42,7 @@ function guardar($query): string
 
         $filas = mysqli_affected_rows(conn());
 
-        return strval($filas);
+        return "Registro guardado!";
     } catch (Exception $e) {
         return $e->getMessage();
     }

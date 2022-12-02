@@ -64,6 +64,7 @@ $resultado_tarea = consulta2($query_tarea);
                 <thead>
                     <th>Nombre</th>
                     <th>Acciones</th>
+                    <th>Ver</th>
                 </thead>
                 <tbody>
                     <?php
@@ -72,7 +73,8 @@ $resultado_tarea = consulta2($query_tarea);
                         //extract($fila);
                         echo "<tr>";
                         echo   "<td>" . $fila['nombre'] . "</td>";
-                        echo   "<td><a href='modificar'>Modificar</a>&nbsp;&nbsp;&nbsp;<a href='eliminar.php?table=proyecto&id=". $fila['id'] ."'>Eliminar</a> </td> ";                        
+                        echo   "<td><a href='templates/modificar_proyecto.php?table=proyecto&id=". $fila['id'] ."'>Modificar</a>&nbsp;&nbsp;&nbsp;<a href='eliminar.php?table=proyecto&id=". $fila['id'] ."'>Eliminar</a> </td> ";
+                        echo   "<td><a href='ver_tareas_proyecto.php?proyecto=". $fila['id'] ."'>Visualizar tareas </a>"; 
                         echo "</tr>";
                     }
                     ?>
@@ -89,6 +91,7 @@ $resultado_tarea = consulta2($query_tarea);
                     <th>Nombre</th>
                     <th>Usuario</th>
                     <th>Proyecto</th>
+                    <th>Estado</th>
                     <th>Acciones</th>
                 </thead>
                 <tbody>
@@ -100,7 +103,11 @@ $resultado_tarea = consulta2($query_tarea);
                         echo   "<td>" . $fila['nombre'] . "</td>";
                         echo   "<td>" . $fila['nombreU'] . "</td>";
                         echo   "<td>" . $fila['nombreP'] . "</td>";
-                        echo   "<td><a href='modificar'>Modificar</a>&nbsp;&nbsp;&nbsp;<a href='eliminar.php?table=tarea&idU=". $fila['usuario'] ."&idt=". $fila['proyecto'] ."  '>Eliminar</a> </td> ";                        
+                        if ($fila['estado'] == 1)$est = "Pendiente";
+                        if ($fila['estado'] == 2)$est = "En progreso";
+                        if ($fila['estado'] == 3)$est = "Finalizada";
+                        echo   "<td>" . $est . "</td>";
+                        echo   "<td><a href='templates/modificar_proyecto.php?tabla=tarea&usuario=".$fila['nombreU']."&proyecto=".$fila['nombreP']."&nombre=".$fila['nombre']."'>Modificar</a>&nbsp;&nbsp;&nbsp;<a href='eliminar.php?table=tarea&idU=". $fila['usuario'] ."&idt=". $fila['proyecto'] ."  '>Eliminar</a> </td> ";                        
                         echo "</tr>";
                     }
                     ?> 
@@ -110,6 +117,8 @@ $resultado_tarea = consulta2($query_tarea);
     </section>
 <!-- <a href="modificar">Modificar</a>
 <a href="eliminar">Eliminar</a> -->
+
+    
 </body>
 
 </html>

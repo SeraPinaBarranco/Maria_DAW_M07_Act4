@@ -1,51 +1,62 @@
 <?php
 
 if ( !empty($_POST['usuario']) && !empty($_POST['proyecto']) && !empty($_POST['nombre']) && !empty($_POST['estado']) ) {
-    guardar();
+    
+    $usuario = intval($_POST['usuario']);
+    $proyecto = intval($_POST['proyecto']);
+    $nombre = $_POST['nombre'];
+    $estado = intval($_POST['estado']);
+
+    require_once "../model/conection.php";
+
+    $query = "INSERT INTO tarea(usuario, proyecto, nombre, estado) VALUES ($usuario, $proyecto, '$nombre', $estado)";
+
+    echo guardar($query);
+
 } else {
     # code...
 }
 
 
-function guardar()
-{
-    $usuario = $_POST['usuario'];
-    $proyecto = $_POST['proyecto'];
-    $nombre = $_POST['nombre'];
-    $estado = $_POST['estado'];
 
+
+
+// try {
+    // function guardar()
+    // {
+    //     $usuario = intval($_POST['usuario']);
+    //     $proyecto = intval($_POST['proyecto']);
+    //     $nombre = $_POST['nombre'];
+    //     $estado = intval($_POST['estado']);
     
-    try {
-
-        $SERVER= "localhost";
-        $USER="root";
-        $PASS="";
-        //$PASS="usbw";
-        $DB="actividad4";
+    //     //var_dump($_POST);
         
-        //Conexión al BBDD
-        $con = new PDO(
-            "mysql:host=$SERVER;dbname=$DB",
-            $USER.
-            $PASS
-        );
-        $query = "INSERT INTO tareas(usuario, proyecto, nombre, estado) VALUES (?,?,?,?)";
-        $con->prepare($query)->execute([$usuario, $proyecto, $nombre, $estado]);
+                
+    // }
+    
+    //     $SERVER= "localhost";
+    //     $USER="root";
+    //     $PASS="";
+    //     //$PASS="usbw";
+    //     $DB="actividad4";
         
-    } catch (PDOException $exc) {
-
-        //var_dump($exc->getMessage());
-        echo "Error al guardar el registro";
-
-    }finally{
-
-        $con = null;
-
-    }
+    //     //Conexión al BBDD
+    //     $con = new PDO("mysql:host=$SERVER;dbname=$DB", $USER, $PASS);
+    //     var_dump($con);
+    //     //$query = "INSERT INTO tareas(usuario, proyecto, nombre, estado) VALUES (?,?,?,?)";
+    //     //$con->prepare($query)->execute([$usuario, $proyecto, $nombre, $estado]);
         
-}
+    // } catch (PDOException $exc) {
 
+    //     //var_dump($exc->getMessage());
+    //     echo "Error al guardar el registro:" . $exc;
 
+    // }finally{
 
+    //     $con = null;
+
+    // }
 
 ?>
+
+
